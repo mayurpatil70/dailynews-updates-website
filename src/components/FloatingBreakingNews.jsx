@@ -1,45 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useNews } from '../context/NewsContext';
 import { useLanguage } from '../context/LanguageContext';
 
 const FloatingBreakingNews = () => {
-  const { getBreakingNews } = useNews();
+  const { getBreakingNews, articles } = useNews();
   const { language, t } = useLanguage();
-  const breakingList = getBreakingNews();
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const breakingList = useMemo(() => {
+    const list = getBreakingNews ? getBreakingNews() : [];
+    if (list && list.length > 0) return list;
+    return (articles || []).slice(0, 8);
+  }, [getBreakingNews, articles]);
+
   const [isMinimized, setIsMinimized] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    if (!breakingList || breakingList.length <= 1 || isPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % breakingList.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [breakingList, isPaused]);
+  // Ensure enough items to smoothly fill the track and loop infinitely
+  const tickerItems = useMemo(() => {
+    if (!breakingList || breakingList.length === 0) return [];
+    let items = [...breakingList];
+    while (items.length < 5) {
+      items = [...items, ...breakingList];
+    }
+    return items;
+  }, [breakingList]);
 
   if (!breakingList || breakingList.length === 0) return null;
-
-  const safeIndex = currentIndex % breakingList.length;
-  const currentItem = breakingList[safeIndex];
-
-  if (!currentItem) return null;
-
-  const displayTitle = language === 'en' && currentItem.titleEn ? currentItem.titleEn : currentItem.title;
-
-  const handlePrev = (e) => {
-    e.stopPropagation();
-    setCurrentIndex(prev => (prev - 1 + breakingList.length) % breakingList.length);
-  };
-
-  const handleNext = (e) => {
-    e.stopPropagation();
-    setCurrentIndex(prev => (prev + 1) % breakingList.length);
-  };
 
   if (isMinimized) {
     return (
@@ -55,50 +41,60 @@ const FloatingBreakingNews = () => {
   }
 
   return (
-    <div
-      className="floating-breaking-bar"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className="container-fluid px-3 d-flex align-items-center justify-content-between">
+    <div className="floating-breaking-bar">
+      <div className="container-fluid px-2 px-md-3 d-flex align-items-center justify-content-between">
         {/* Left: Red Flashing Badge */}
-        <div className="d-flex align-items-center gap-2 flex-shrink-0">
+        <div className="d-flex align-items-center gap-1 flex-shrink-0">
           <span className="floating-badge-alert">
             <i className="bi bi-lightning-fill text-danger me-1"></i>
-            {t('breakingNews').toUpperCase()}
+            <span className="d-none d-sm-inline">{t('breakingNews').toUpperCase()}</span>
+            <span className="d-inline d-sm-none">BREAKING</span>
           </span>
         </div>
 
-        {/* Center: Headline with marquee/transition */}
-        <div className="flex-grow-1 px-3 text-truncate">
-          <Link
-            to={`/news/${currentItem.id}`}
-            className="floating-headline-link text-truncate d-block"
-            title={displayTitle}
-          >
-            {displayTitle}
-          </Link>
+        {/* Center: Continuous Floating News Marquee (Right-to-Left loop) */}
+        <div className="floating-marquee-container flex-grow-1 overflow-hidden position-relative mx-2">
+          <div className="floating-marquee-track">
+            {/* 1st copy */}
+            {tickerItems.map((item, idx) => {
+              const displayTitle = language === 'en' && item.titleEn ? item.titleEn : item.title;
+              return (
+                <span key={`f1-${item.id}-${idx}`} className="floating-marquee-item">
+                  <Link
+                    to={`/news/${item.id}`}
+                    className="floating-headline-link"
+                    title={displayTitle}
+                  >
+                    {displayTitle}
+                  </Link>
+                  <span className="floating-marquee-dot">•</span>
+                </span>
+              );
+            })}
+            {/* 2nd copy for seamless infinite loop */}
+            {tickerItems.map((item, idx) => {
+              const displayTitle = language === 'en' && item.titleEn ? item.titleEn : item.title;
+              return (
+                <span key={`f2-${item.id}-${idx}`} className="floating-marquee-item">
+                  <Link
+                    to={`/news/${item.id}`}
+                    className="floating-headline-link"
+                    title={displayTitle}
+                  >
+                    {displayTitle}
+                  </Link>
+                  <span className="floating-marquee-dot">•</span>
+                </span>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Right: Controls & Minimize */}
-        <div className="d-flex align-items-center gap-2 flex-shrink-0">
-          <button
-            onClick={handlePrev}
-            className="btn btn-sm text-white p-0 px-1 floating-ctrl-btn"
-            title="Previous"
-          >
-            <i className="bi bi-chevron-left"></i>
-          </button>
-          <button
-            onClick={handleNext}
-            className="btn btn-sm text-white p-0 px-1 floating-ctrl-btn"
-            title="Next"
-          >
-            <i className="bi bi-chevron-right"></i>
-          </button>
+        {/* Right: Minimize button */}
+        <div className="d-flex align-items-center flex-shrink-0">
           <button
             onClick={() => setIsMinimized(true)}
-            className="btn btn-sm text-white p-0 px-2 floating-ctrl-btn border-start ps-2"
+            className="btn btn-sm text-white p-0 px-2 floating-ctrl-btn"
             title="Minimize / छुपाएं"
           >
             <i className="bi bi-x-lg"></i>

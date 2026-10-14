@@ -67,10 +67,10 @@ const TopBar = () => {
   };
 
   return (
-    <div className="topbar py-1 d-none d-md-block">
-      <div className="container-fluid px-lg-4 d-flex justify-content-between align-items-center">
-        {/* Left: Interactive Date Picker (City and Weather removed as requested) */}
-        <div className="d-flex align-items-center gap-2 flex-shrink-0">
+    <div className="topbar py-1">
+      <div className="container-fluid px-2 px-lg-4 d-flex justify-content-between align-items-center">
+        {/* Left: Interactive Date Picker (Desktop & Tablet) */}
+        <div className="d-none d-lg-flex align-items-center gap-2 flex-shrink-0">
           <i className="bi bi-calendar3 text-danger fs-6"></i>
           <span className="small text-white-50">{getFormattedToday()}</span>
           <span className="text-secondary">|</span>
@@ -99,13 +99,14 @@ const TopBar = () => {
 
         {/* Center: Continuous Floating Breaking News Sliding Right to Left in Loop */}
         {tickerItems.length > 0 && (
-          <div className="topbar-ticker-section flex-grow-1 mx-3 d-flex align-items-center overflow-hidden">
+          <div className="topbar-ticker-section flex-grow-1 mx-1 mx-md-3 d-flex align-items-center overflow-hidden">
             <span
-              className="badge bg-danger text-white py-1 px-2 me-2 d-flex align-items-center gap-1 flex-shrink-0 shadow-sm"
-              style={{ fontSize: '0.72rem', letterSpacing: '0.5px', zIndex: 2 }}
+              className="badge bg-danger text-white py-1 px-2 me-1 me-md-2 d-flex align-items-center gap-1 flex-shrink-0 shadow-sm"
+              style={{ fontSize: '0.70rem', letterSpacing: '0.5px', zIndex: 2 }}
             >
               <i className="bi bi-lightning-charge-fill animate-flash"></i>
-              {t('newsBuzz')}
+              <span className="d-none d-sm-inline">{t('newsBuzz')}</span>
+              <span className="d-inline d-sm-none">BUZZ</span>
             </span>
 
             <div className="topbar-ticker-marquee flex-grow-1 overflow-hidden position-relative">
@@ -148,10 +149,10 @@ const TopBar = () => {
           </div>
         )}
 
-        {/* Right: Socials, Search, Language, Theme */}
-        <div className="d-flex align-items-center gap-3 flex-shrink-0">
-          {/* Social Icons */}
-          <div className="d-flex gap-2">
+        {/* Right: Socials (Desktop), Search (Desktop), Language & Theme Buttons (Always visible) */}
+        <div className="d-flex align-items-center gap-1 gap-md-2 flex-shrink-0">
+          {/* Social Icons - Desktop only */}
+          <div className="d-none d-xl-flex gap-2">
             <a href="https://facebook.com" target="_blank" rel="noreferrer" title="Facebook" className="text-decoration-none">
               <i className="bi bi-facebook"></i>
             </a>
@@ -163,18 +164,18 @@ const TopBar = () => {
             </a>
           </div>
 
-          <span className="text-secondary">|</span>
+          <span className="text-secondary d-none d-xl-inline">|</span>
 
-          {/* Quick Search */}
-          <form onSubmit={handleSearch} className="d-flex align-items-center">
-            <div className="input-group input-group-sm" style={{ width: '150px' }}>
+          {/* Quick Search - Desktop & Tablet only */}
+          <form onSubmit={handleSearch} className="d-none d-md-flex align-items-center">
+            <div className="input-group input-group-sm" style={{ width: '135px' }}>
               <input
                 type="text"
                 className="form-control form-control-sm bg-dark text-light border-secondary"
                 placeholder={t('searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ fontSize: '0.8rem' }}
+                style={{ fontSize: '0.78rem' }}
               />
               <button className="btn btn-sm btn-outline-secondary" type="submit">
                 <i className="bi bi-search text-light"></i>
@@ -182,24 +183,24 @@ const TopBar = () => {
             </div>
           </form>
 
-          <span className="text-secondary">|</span>
+          <span className="text-secondary d-none d-md-inline">|</span>
 
-          {/* Language Toggle Button */}
+          {/* Language Toggle Button - Always visible on mobile & desktop */}
           <button
             onClick={toggleLanguage}
-            className="btn btn-sm btn-outline-danger py-0 px-2 fw-bold text-white"
+            className="btn btn-sm btn-outline-danger py-0 px-1 px-sm-2 fw-bold text-white flex-shrink-0"
             title="Switch Language / भाषा बदलें"
-            style={{ fontSize: '0.8rem' }}
+            style={{ fontSize: '0.74rem', height: '24px', lineHeight: '22px' }}
           >
-            {language === 'hi' ? '🇮🇳 हिन्दी | EN' : '🇬🇧 EN | हिन्दी'}
+            {language === 'hi' ? '🇮🇳 HI' : '🇬🇧 EN'}
           </button>
 
-          {/* Theme Toggle Button */}
+          {/* Theme Toggle Button - Always visible on mobile & desktop */}
           <button
             onClick={toggleTheme}
-            className="btn btn-sm btn-outline-secondary py-0 px-2"
+            className="btn btn-sm btn-outline-secondary py-0 px-1 px-sm-2 flex-shrink-0 d-flex align-items-center justify-content-center"
             title={theme === 'dark' ? t('lightMode') : t('darkMode')}
-            style={{ fontSize: '0.85rem' }}
+            style={{ fontSize: '0.8rem', height: '24px', width: '28px' }}
           >
             {theme === 'dark' ? (
               <i className="bi bi-sun-fill text-warning"></i>

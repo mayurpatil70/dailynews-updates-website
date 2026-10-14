@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '../context/ThemeContext';
 
 const HeroFeatured = ({ featuredStories = [] }) => {
-  const { language } = useLanguage();
+  const { language, toggleLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   if (!featuredStories || featuredStories.length === 0) return null;
 
@@ -22,6 +24,64 @@ const HeroFeatured = ({ featuredStories = [] }) => {
 
   return (
     <div className="container mb-4">
+      {/* Mobile View Theme & Language Switch Bar on Hero Home Section */}
+      <div className="d-md-none mb-3">
+        <div className="p-2 rounded bg-body-tertiary border shadow-sm d-flex align-items-center justify-content-between gap-2">
+          {/* Language Switch */}
+          <div className="d-flex align-items-center gap-1">
+            <span className="small text-muted fw-bold" style={{ fontSize: '0.72rem' }}>
+              <i className="bi bi-translate text-danger me-1"></i>
+              {language === 'hi' ? 'भाषा:' : 'Lang:'}
+            </span>
+            <div className="btn-group btn-group-sm" role="group">
+              <button
+                type="button"
+                onClick={() => language !== 'hi' && toggleLanguage()}
+                className={`btn py-0 px-2 fw-bold ${language === 'hi' ? 'btn-danger' : 'btn-outline-secondary'}`}
+                style={{ fontSize: '0.74rem', height: '24px', lineHeight: '22px' }}
+              >
+                हिन्दी
+              </button>
+              <button
+                type="button"
+                onClick={() => language !== 'en' && toggleLanguage()}
+                className={`btn py-0 px-2 fw-bold ${language === 'en' ? 'btn-danger' : 'btn-outline-secondary'}`}
+                style={{ fontSize: '0.74rem', height: '24px', lineHeight: '22px' }}
+              >
+                EN
+              </button>
+            </div>
+          </div>
+
+          {/* Theme Switch */}
+          <div className="d-flex align-items-center gap-1">
+            <span className="small text-muted fw-bold" style={{ fontSize: '0.72rem' }}>
+              <i className="bi bi-palette-fill text-primary me-1"></i>
+              {language === 'hi' ? 'थीम:' : 'Theme:'}
+            </span>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="btn btn-sm btn-outline-secondary py-0 px-2 d-flex align-items-center gap-1 fw-bold"
+              style={{ fontSize: '0.74rem', height: '24px', lineHeight: '22px' }}
+              title={theme === 'dark' ? t('lightMode') : t('darkMode')}
+            >
+              {theme === 'dark' ? (
+                <>
+                  <i className="bi bi-sun-fill text-warning"></i>
+                  <span>Light</span>
+                </>
+              ) : (
+                <>
+                  <i className="bi bi-moon-stars-fill text-primary"></i>
+                  <span>Dark</span>
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div className="row g-3">
         {/* Main Featured Highlight */}
         <div className="col-lg-7">

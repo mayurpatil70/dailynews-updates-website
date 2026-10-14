@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
+import { useTheme } from '../../context/ThemeContext';
 
 const Navbar = () => {
-  const { language, t } = useLanguage();
+  const { language, toggleLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
 
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -124,10 +126,35 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Toggler (Language & Theme buttons kept only in topbar as requested) */}
-        <div className="d-lg-none d-flex align-items-center">
+        {/* Mobile View: Language Toggle, Theme Toggle & Menu Toggler */}
+        <div className="d-lg-none d-flex align-items-center gap-2">
+          {/* Mobile Language Button */}
           <button
-            className="btn btn-sm text-white p-1"
+            onClick={toggleLanguage}
+            className="btn btn-sm exact-lang-btn fw-bold"
+            title="Switch Language / भाषा बदलें"
+            style={{ fontSize: '0.74rem', padding: '2px 7px' }}
+          >
+            {language === 'hi' ? '🇮🇳 HI' : '🇬🇧 EN'}
+          </button>
+
+          {/* Mobile Theme Button */}
+          <button
+            onClick={toggleTheme}
+            className="btn btn-sm exact-theme-btn d-flex align-items-center justify-content-center"
+            title={theme === 'dark' ? t('lightMode') : t('darkMode')}
+            style={{ fontSize: '0.8rem', padding: '2px 7px', height: '24px', width: '28px' }}
+          >
+            {theme === 'dark' ? (
+              <i className="bi bi-sun-fill text-warning"></i>
+            ) : (
+              <i className="bi bi-moon-stars-fill text-white"></i>
+            )}
+          </button>
+
+          {/* Mobile Menu Toggler */}
+          <button
+            className="btn btn-sm text-white p-1 ms-1"
             type="button"
             onClick={() => setIsNavOpen(!isNavOpen)}
             aria-label="Toggle navigation"

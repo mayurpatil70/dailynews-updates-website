@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
-import { useTheme } from '../../context/ThemeContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useNews } from '../../context/NewsContext';
 
 const TopBar = () => {
-  const { theme, toggleTheme } = useTheme();
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
   const { getBreakingNews, articles } = useNews();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchParams] = useSearchParams();
@@ -149,8 +147,8 @@ const TopBar = () => {
           </div>
         )}
 
-        {/* Right: Socials (Desktop), Search (Desktop), Language & Theme Buttons (Always visible) */}
-        <div className="d-flex align-items-center gap-1 gap-md-2 flex-shrink-0">
+        {/* Right: Socials (Desktop), Search (Desktop & Tablet) */}
+        <div className="d-none d-md-flex align-items-center gap-1 gap-md-2 flex-shrink-0">
           {/* Social Icons - Desktop only */}
           <div className="d-none d-xl-flex gap-2">
             <a href="https://facebook.com" target="_blank" rel="noreferrer" title="Facebook" className="text-decoration-none">
@@ -182,32 +180,6 @@ const TopBar = () => {
               </button>
             </div>
           </form>
-
-          <span className="text-secondary d-none d-md-inline">|</span>
-
-          {/* Language Toggle Button - Always visible on mobile & desktop */}
-          <button
-            onClick={toggleLanguage}
-            className="btn btn-sm btn-outline-danger py-0 px-1 px-sm-2 fw-bold text-white flex-shrink-0"
-            title="Switch Language / भाषा बदलें"
-            style={{ fontSize: '0.74rem', height: '24px', lineHeight: '22px' }}
-          >
-            {language === 'hi' ? '🇮🇳 HI' : '🇬🇧 EN'}
-          </button>
-
-          {/* Theme Toggle Button - Always visible on mobile & desktop */}
-          <button
-            onClick={toggleTheme}
-            className="btn btn-sm btn-outline-secondary py-0 px-1 px-sm-2 flex-shrink-0 d-flex align-items-center justify-content-center"
-            title={theme === 'dark' ? t('lightMode') : t('darkMode')}
-            style={{ fontSize: '0.8rem', height: '24px', width: '28px' }}
-          >
-            {theme === 'dark' ? (
-              <i className="bi bi-sun-fill text-warning"></i>
-            ) : (
-              <i className="bi bi-moon-stars-fill text-light"></i>
-            )}
-          </button>
         </div>
       </div>
     </div>

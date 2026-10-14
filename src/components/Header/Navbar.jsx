@@ -126,9 +126,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile View: Language Toggle, Theme Toggle & Menu Toggler */}
-        <div className="d-lg-none d-flex align-items-center gap-2">
-          {/* Mobile Language Button */}
+        {/* Right Controls: Single 1-1 Language & Theme Switcher on Red Navbar (left side of three lines on mobile) */}
+        <div className="d-flex align-items-center gap-2 flex-shrink-0 ms-2">
+          {/* Language Toggle Button */}
           <button
             onClick={toggleLanguage}
             className="btn btn-sm exact-lang-btn fw-bold"
@@ -138,7 +138,7 @@ const Navbar = () => {
             {language === 'hi' ? '🇮🇳 HI' : '🇬🇧 EN'}
           </button>
 
-          {/* Mobile Theme Button */}
+          {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
             className="btn btn-sm exact-theme-btn d-flex align-items-center justify-content-center"
@@ -152,9 +152,9 @@ const Navbar = () => {
             )}
           </button>
 
-          {/* Mobile Menu Toggler */}
+          {/* Mobile Menu Toggler (Three Lines) */}
           <button
-            className="btn btn-sm text-white p-1 ms-1"
+            className="btn btn-sm text-white p-1 ms-1 d-lg-none"
             type="button"
             onClick={() => setIsNavOpen(!isNavOpen)}
             aria-label="Toggle navigation"

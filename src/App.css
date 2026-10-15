@@ -1,4 +1,4 @@
-/* TheNewsAdda Global Stylesheet */
+/* Soar Samachar (सोर समाचार) Global Stylesheet */
 :root {
   --primary-color: #c8232c;
   --primary-dark: #a71d24;
@@ -148,29 +148,84 @@ body {
 .exact-logo-link {
   display: inline-flex;
   align-items: center;
-  padding: 0.55rem 0;
+  padding: 0.4rem 0;
   user-select: none;
+  transition: opacity 0.2s ease;
 }
 
-.logo-the-news {
+.exact-logo-link:hover {
+  opacity: 0.95;
+}
+
+.navbar-brand-3d-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.exact-logo-link:hover .navbar-brand-3d-logo {
+  transform: scale(1.06);
+}
+
+.logo-brand-title {
   color: #ffffff;
-  font-size: 1.65rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
+  line-height: 1.1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.logo-brand-sub {
+  color: #fef08a;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
   line-height: 1;
 }
 
-.logo-adda-box {
-  background-color: #ffffff;
-  color: var(--navbar-red);
-  font-size: 1.35rem;
-  font-weight: 900;
-  padding: 2px 8px;
-  border-radius: 4px;
-  margin-left: 6px;
-  letter-spacing: 0.5px;
+/* Header & 3D Logo Component styles */
+.logo-3d-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d4af37;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.logo-3d-img:hover {
+  transform: scale(1.05);
+}
+
+.logo-main-hindi {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
   line-height: 1.1;
-  display: inline-block;
+}
+
+.logo-main-english {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.footer-brand-3d-logo {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #d4af37;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  flex-shrink: 0;
 }
 
 .exact-nav-links {
@@ -717,6 +772,50 @@ body {
   font-size: 0.85rem;
 }
 
+/* Footer Hackerfromhills Attribution matching Screenshot 2 */
+.footer-hacker-attribution {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.25rem;
+  margin-top: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+.hacker-text {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #38bdf8;
+  font-size: 0.98rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  letter-spacing: 0.25px;
+}
+
+.hacker-heart {
+  color: #ff4757;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+  margin: 0 1px;
+}
+
+.hacker-link {
+  color: #38bdf8 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3.5px;
+  text-decoration-thickness: 1.5px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.hacker-link:hover {
+  color: #7dd3fc !important;
+  text-decoration: underline !important;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.65);
+}
+
 /* Admin Portal Specific Styles */
 .admin-sidebar {
   background-color: #0f172a;
@@ -767,12 +866,28 @@ body {
 }
 
 @media (max-width: 768px) {
-  .logo-the-news {
-    font-size: 1.3rem;
+  .navbar-brand-3d-logo {
+    width: 36px;
+    height: 36px;
   }
-  .logo-adda-box {
-    font-size: 1.1rem;
-    padding: 1px 6px;
+  .logo-brand-title {
+    font-size: 1.12rem;
+  }
+  .logo-brand-sub {
+    font-size: 0.65rem;
+  }
+  .logo-3d-img {
+    width: 52px;
+    height: 52px;
+  }
+  .logo-main-hindi {
+    font-size: 1.45rem;
+  }
+  .logo-main-english {
+    font-size: 1.05rem;
+  }
+  .hacker-text {
+    font-size: 0.88rem;
   }
   .hero-main-card {
     height: 280px;

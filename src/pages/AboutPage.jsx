@@ -12,18 +12,26 @@ const AboutPage = () => {
           <div className="col-lg-9">
             {/* Header Banner */}
             <div className="text-center mb-5">
-              <span className="badge bg-danger px-3 py-2 fs-6 mb-3">OUR MISSION</span>
-              <h1 className="fw-bold display-6 mb-3">The News Adda</h1>
-              <p className="lead text-danger fw-bold">ONLY NEWS NO AGENDA • केवल खबर, कोई एजेंडा नहीं</p>
+              <img
+                src="/logo.png"
+                alt="Soar Samachar 3D Logo"
+                className="logo-3d-img mb-3"
+                style={{ width: '90px', height: '90px' }}
+              />
+              <div>
+                <span className="badge bg-danger px-3 py-2 fs-6 mb-2">OUR MISSION</span>
+              </div>
+              <h1 className="fw-bold display-6 mb-2">Soar Samachar (सोर समाचार)</h1>
+              <p className="lead text-danger fw-bold">खबर वही - जो सही • पिथौरागढ़ (उत्तराखण्ड)</p>
             </div>
 
             <div className="bg-body-tertiary p-4 p-md-5 rounded border mb-4">
               <h3 className="fw-bold mb-3 border-start border-4 border-danger ps-3">हमारा परिचय</h3>
               <p className="fs-6 text-body lh-lg">
-                <strong>The News Adda (thenewsadda.in)</strong> भारत का एक अग्रणी डिजिटल समाचार और विचार मंच है। हमारी स्थापना तथ्यपरक, निष्पक्ष और बेबाक पत्रकारिता को समर्पित दृष्टिकोण के साथ हुई है। आज के शोरगुल भरे मीडिया परिदृश्य में हमारा दृढ़ विश्वास है कि समाचार को किसी व्यक्तिगत या राजनीतिक एजेंडे से मुक्त होकर विशुद्ध रूप से जनता तक पहुंचना चाहिए।
+                <strong>Soar Samachar (सोर समाचार)</strong> सीमांत जनपद पिथौरागढ़, उत्तराखण्ड और सम्पूर्ण देश का एक अग्रणी डिजिटल समाचार और विचार मंच है। हमारी स्थापना तथ्यपरक, निष्पक्ष और बेबाक पत्रकारिता को समर्पित दृष्टिकोण के साथ हुई है। आज के शोरगुल भरे मीडिया परिदृश्य में हमारा दृढ़ विश्वास है कि समाचार को किसी व्यक्तिगत या राजनीतिक एजेंडे से मुक्त होकर विशुद्ध रूप से जनता तक पहुंचना चाहिए।
               </p>
               <p className="fs-6 text-body lh-lg">
-                हम उत्तराखंड, राष्ट्रीय राजनीति, अर्थव्यवस्था (Growth स्टोरी), जनसरोकार (Adda स्पेशल), खेल, स्वास्थ्य, तकनीकी नवाचार और वैचारिक विश्लेषणों पर गहरी व संतुलित रिपोर्टिंग प्रस्तुत करते हैं।
+                हम पिथौरागढ़, सीमांत उत्तराखंड, राष्ट्रीय राजनीति, अर्थव्यवस्था (Growth स्टोरी), जनसरोकार (Soar स्पेशल), खेल, स्वास्थ्य, तकनीकी नवाचार और वैचारिक विश्लेषणों पर गहरी व संतुलित रिपोर्टिंग प्रस्तुत करते हैं।
               </p>
 
               <div className="row g-4 my-3">
@@ -52,7 +60,7 @@ const AboutPage = () => {
 
               <h4 className="fw-bold mt-4 mb-3 border-start border-4 border-danger ps-3">संपादकीय नीति (Editorial Ethics)</h4>
               <p className="fs-6 text-body lh-lg">
-                The News Adda प्रेस काउंसिल ऑफ इंडिया (PCI) और डिजिटल न्यूज पब्लिशर्स एसोसिएशन के उच्चतम नैतिक दिशा-निर्देशों का अनुपालन करता है। हम किसी भी खबर को प्रकाशित करने से पूर्व उसके तथ्यों की स्वतंत्र पुष्टि करते हैं।
+                Soar Samachar प्रेस काउंसिल ऑफ इंडिया (PCI) और डिजिटल न्यूज पब्लिशर्स एसोसिएशन के उच्चतम नैतिक दिशा-निर्देशों का अनुपालन करता है। हम किसी भी खबर को प्रकाशित करने से पूर्व उसके तथ्यों की स्वतंत्र पुष्टि करते हैं।
               </p>
             </div>
 

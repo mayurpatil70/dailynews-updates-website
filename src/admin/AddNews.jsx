@@ -24,14 +24,14 @@ const AddNews = () => {
     titleEn: '',
     category: 'news360',
     language: 'hi',
-    author: 'संपादकीय टीम, The News Adda',
+    author: 'संपादकीय टीम, Soar Samachar',
     urlToImage: PRESET_IMAGES[0].url,
     mediaType: 'image', // 'image' or 'video'
     description: '',
     content: '',
     isBreaking: false,
     isFeatured: false,
-    tagsInput: 'समाचार, TheNewsAdda'
+    tagsInput: 'समाचार, SoarSamachar, पिथौरागढ़'
   });
 
   const [uploading, setUploading] = useState(false);
@@ -131,14 +131,14 @@ const AddNews = () => {
                   titleEn: '',
                   category: 'news360',
                   language: 'hi',
-                  author: 'संपादकीय टीम, The News Adda',
+                  author: 'संपादकीय टीम, Soar Samachar',
                   urlToImage: PRESET_IMAGES[0].url,
                   mediaType: 'image',
                   description: '',
                   content: '',
                   isBreaking: false,
                   isFeatured: false,
-                  tagsInput: 'समाचार, TheNewsAdda'
+                  tagsInput: 'समाचार, SoarSamachar, पिथौरागढ़'
                 });
               }}
               className="btn btn-outline-secondary"

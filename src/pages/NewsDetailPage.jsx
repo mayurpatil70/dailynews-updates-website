@@ -108,7 +108,7 @@ const NewsDetailPage = () => {
                 <div className="d-flex align-items-center gap-3">
                   <span>
                     <i className="bi bi-person-circle text-danger me-1"></i>
-                    <strong>{article.author || 'The News Adda'}</strong>
+                    <strong>{article.author || 'Soar Samachar'}</strong>
                   </span>
                   <span>
                     <i className="bi bi-calendar3 me-1"></i> {formattedDate}
@@ -272,9 +272,9 @@ const NewsDetailPage = () => {
             </div>
 
             <div className="sidebar-widget bg-body-tertiary text-center">
-              <h6 className="fw-bold mb-2">The News Adda App</h6>
+              <h6 className="fw-bold mb-2">Soar Samachar App</h6>
               <p className="small text-muted mb-3">
-                देश-दुनिया की निष्पक्ष खबरें सबसे पहले पाने के लिए हमारे साथ बने रहें।
+                पिथौरागढ़, उत्तराखण्ड और देश-दुनिया की निष्पक्ष खबरें सबसे पहले पाने के लिए हमारे साथ बने रहें।
               </p>
               <Link to="/contact-us" className="btn btn-outline-danger btn-sm w-100">
                 {t('contactUs')}

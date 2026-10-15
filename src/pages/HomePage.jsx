@@ -164,12 +164,12 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* The News Adda Live Widget matching user screenshot */}
+            {/* Soar Samachar Live Widget */}
             <div className="sidebar-widget p-0 overflow-hidden border-danger border">
               <div className="bg-danger text-white py-2 px-3 fw-bold d-flex align-items-center justify-content-between">
                 <span>
                   <i className="bi bi-broadcast me-2 animate-flash"></i>
-                  The News Adda Live
+                  Soar Samachar Live (सोर समाचार)
                 </span>
                 <span className="badge bg-white text-danger fw-bold">LIVE</span>
               </div>
@@ -177,14 +177,14 @@ const HomePage = () => {
                 <div className="ratio ratio-16x9 rounded overflow-hidden mb-2 bg-dark">
                   <iframe
                     src="https://www.youtube.com/embed/live_stream?channel=thenewsaddaa"
-                    title="The News Adda Live Broadcast"
+                    title="Soar Samachar Live Broadcast"
                     allowFullScreen
                     className="border-0"
                     loading="lazy"
                   ></iframe>
                 </div>
-                <h6 className="fw-bold mb-1 small">उत्तराखंड और देश की ताज़ा खबरों पर सीधा प्रसारण</h6>
-                <p className="text-muted small mb-0">The News Adda डिजिटल चैनल पर देखें दिनभर की सबसे बड़ी सुर्खियां।</p>
+                <h6 className="fw-bold mb-1 small">पिथौरागढ़, उत्तराखण्ड और देश की ताज़ा खबरों पर सीधा प्रसारण</h6>
+                <p className="text-muted small mb-0">Soar Samachar डिजिटल चैनल पर देखें दिनभर की सबसे बड़ी सुर्खियां।</p>
               </div>
             </div>
           </div>

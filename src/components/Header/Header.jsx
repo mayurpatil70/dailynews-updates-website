@@ -29,14 +29,20 @@ const Header = () => {
           {/* Logo & Tagline */}
           <div className="col-12 col-md-7 text-center text-md-start">
             <Link to="/" className="text-decoration-none">
-              <div className="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
-                <span className="badge bg-danger rounded-pill p-2 px-3 fw-bold fs-6">NA</span>
+              <div className="d-flex align-items-center justify-content-center justify-content-md-start gap-3">
+                <img
+                  src="/logo.png"
+                  alt="Soar Samachar 3D Logo"
+                  className="logo-3d-img"
+                />
                 <div>
-                  <span className="logo-main-text">
-                    TheNews<span className="text-dark-emphasis">Adda</span>
-                  </span>
-                  <div className="logo-tagline">
-                    {t('tagline')} <span className="d-none d-sm-inline">• {t('subTagline')}</span>
+                  <div className="d-flex align-items-baseline gap-2">
+                    <span className="logo-main-hindi">सोर समाचार</span>
+                    <span className="logo-main-english text-danger fw-bold d-none d-sm-inline">Soar Samachar</span>
+                  </div>
+                  <div className="logo-tagline text-muted">
+                    <span className="fw-bold text-danger">{t('tagline')}</span>
+                    <span className="d-none d-sm-inline"> • {t('subTagline')}</span>
                   </div>
                 </div>
               </div>

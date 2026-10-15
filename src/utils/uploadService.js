@@ -1,5 +1,5 @@
 /**
- * Media Upload Service for TheNewsAdda
+ * Media Upload Service for Soar Samachar
  * Uploads images and videos via Multer backend (http://localhost:5000/api/upload)
  * with automatic fallback to local Data URL preview if backend is offline.
  */

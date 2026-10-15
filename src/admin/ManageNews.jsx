@@ -223,7 +223,7 @@ const ManageNews = () => {
                         <div className="fw-semibold text-truncate" style={{ maxWidth: '300px' }}>
                           {article.title}
                         </div>
-                        <small className="text-muted">{article.author || 'The News Adda'}</small>
+                        <small className="text-muted">{article.author || 'Soar Samachar'}</small>
                       </td>
                       <td>
                         <span className="badge bg-secondary-subtle text-secondary-emphasis">

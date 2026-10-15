@@ -5,12 +5,12 @@ const LanguageContext = createContext();
 export const translations = {
   hi: {
     // Brand & Header
-    siteTitle: 'The News Adda',
-    tagline: 'ONLY NEWS NO AGENDA',
-    subTagline: 'केवल खबर, कोई एजेंडा नहीं',
+    siteTitle: 'Soar Samachar',
+    tagline: 'खबर वही - जो सही',
+    subTagline: 'पिथौरागढ़ | उत्तराखण्ड',
     newsBuzz: 'न्यूज़ बज़',
     breakingNews: 'ब्रेकिंग न्यूज़',
-    weatherCity: 'देहरादून',
+    weatherCity: 'पिथौरागढ़',
     searchPlaceholder: 'खबरें खोजें...',
     searchBtn: 'खोजें',
     darkMode: 'डार्क मोड',
@@ -23,7 +23,7 @@ export const translations = {
     nav_news360: 'न्यूज़ 360',
     nav_growthStory: 'Growth स्टोरी',
     nav_politics: 'PURE पॉलिटिक्स',
-    nav_addaSpecial: 'Adda स्पेशल',
+    nav_addaSpecial: 'Soar स्पेशल',
     nav_yourColumn: 'Your कॉलम',
     nav_explainer: 'एक्सप्लेनर',
     nav_more: 'अन्य श्रेणियां',
@@ -69,10 +69,10 @@ export const translations = {
     newsletterTitle: 'न्यूज़लेटर सब्सक्राइब करें',
     newsletterSub: 'ताज़ा समाचार और विशेष विश्लेषण सीधे अपने इनबॉक्स में पाएं।',
     subscribeBtn: 'सब्सक्राइब',
-    copyrightText: '© 2026 The News Adda. सर्वाधिकार सुरक्षित। केवल खबर, कोई एजेंडा नहीं।',
+    copyrightText: '© 2026 Soar Samachar (सोर समाचार). सर्वाधिकार सुरक्षित। केवल खबर, कोई एजेंडा नहीं।',
 
     // Admin UI
-    admin_title: 'द न्यूज़ अड्डा - एडमिन पोर्टल',
+    admin_title: 'सोर समाचार - एडमिन पोर्टल',
     admin_subtitle: 'समाचार जोड़ें, संपादित करें और प्रबंधित करें',
     admin_addNews: 'नया समाचार जोड़ें',
     admin_manageNews: 'समाचार प्रबंधित करें',
@@ -105,12 +105,12 @@ export const translations = {
   },
   en: {
     // Brand & Header
-    siteTitle: 'The News Adda',
-    tagline: 'ONLY NEWS NO AGENDA',
-    subTagline: 'Only News, No Agenda',
+    siteTitle: 'Soar Samachar',
+    tagline: 'Khabar Wahi - Jo Sahi',
+    subTagline: 'Pithoragarh | Uttarakhand',
     newsBuzz: 'News Buzz',
     breakingNews: 'Breaking News',
-    weatherCity: 'Dehradun',
+    weatherCity: 'Pithoragarh',
     searchPlaceholder: 'Search news...',
     searchBtn: 'Search',
     darkMode: 'Dark Mode',
@@ -123,7 +123,7 @@ export const translations = {
     nav_news360: 'News 360',
     nav_growthStory: 'Growth Story',
     nav_politics: 'Pure Politics',
-    nav_addaSpecial: 'Adda Special',
+    nav_addaSpecial: 'Soar Special',
     nav_yourColumn: 'Your Column',
     nav_explainer: 'Explainer',
     nav_more: 'More Categories',
@@ -169,10 +169,10 @@ export const translations = {
     newsletterTitle: 'Subscribe to Newsletter',
     newsletterSub: 'Get exclusive investigative reports and daily briefs in your inbox.',
     subscribeBtn: 'Subscribe',
-    copyrightText: '© 2026 The News Adda. All Rights Reserved. Only News No Agenda.',
+    copyrightText: '© 2026 Soar Samachar. All Rights Reserved. Only News No Agenda.',
 
     // Admin UI
-    admin_title: 'The News Adda - Admin Portal',
+    admin_title: 'Soar Samachar - Admin Portal',
     admin_subtitle: 'Create, Edit and Manage News Articles',
     admin_addNews: 'Add New Article',
     admin_manageNews: 'Manage Articles',

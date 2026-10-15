@@ -29,7 +29,7 @@ const News = (props) => {
     props.setProgress(100)
   }
   useEffect(() => {
-    document.title = `${capitalizeFirstLetter(props.category)} - News Adda`;
+    document.title = `${capitalizeFirstLetter(props.category)} - Soar Samachar`;
     updateNews();
     // eslint-disable-next-line
   }, [])
@@ -45,7 +45,7 @@ const News = (props) => {
 
   return (
     <>
-      <h1 className="text-center text-danger my-4">News Adda - Top {capitalizeFirstLetter(props.category)} Hedlines</h1>
+      <h1 className="text-center text-danger my-4">Soar Samachar - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
       {loading && <Spineer />};
       <InfiniteScroll
         dataLength={articles.length}

@@ -42,9 +42,9 @@ const ContactPage = () => {
               <div className="d-flex align-items-start gap-3 mb-4">
                 <i className="bi bi-geo-alt-fill text-danger fs-3"></i>
                 <div>
-                  <h6 className="fw-bold mb-1">प्रधान कार्यालय</h6>
+                  <h6 className="fw-bold mb-1">प्रधान कार्यालय (सोर समाचार)</h6>
                   <p className="small text-muted mb-0">
-                    राजपुर रोड, देहरादून, उत्तराखंड - 248001
+                    मेन मार्केट, पिथौरागढ़ (उत्तराखण्ड) - 262501
                   </p>
                 </div>
               </div>
@@ -54,8 +54,8 @@ const ContactPage = () => {
                 <div>
                   <h6 className="fw-bold mb-1">संपादकीय ईमेल</h6>
                   <p className="small text-muted mb-0">
-                    contact@thenewsadda.in<br />
-                    editor@thenewsadda.in
+                    contact@soarsamachar.com<br />
+                    editor@soarsamachar.com
                   </p>
                 </div>
               </div>
@@ -65,7 +65,7 @@ const ContactPage = () => {
                 <div>
                   <h6 className="fw-bold mb-1">हेल्पलाइन</h6>
                   <p className="small text-muted mb-0">
-                    +91 135 276 5432 / +91 98765 43210
+                    +91 5964 225432 / +91 98765 43210
                   </p>
                 </div>
               </div>
@@ -91,7 +91,7 @@ const ContactPage = () => {
                 <div className="alert alert-success py-4 text-center">
                   <i className="bi bi-check-circle-fill fs-1 text-success d-block mb-2"></i>
                   <h5 className="fw-bold">आपका संदेश प्राप्त हो गया है!</h5>
-                  <p className="small mb-0 text-muted">The News Adda टीम जल्द ही आपके ईमेल पर संपर्क करेगी।</p>
+                  <p className="small mb-0 text-muted">Soar Samachar (सोर समाचार) टीम जल्द ही आपके ईमेल पर संपर्क करेगी।</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>

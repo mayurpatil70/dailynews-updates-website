@@ -32,10 +32,13 @@ const Navbar = () => {
       <div className="container-fluid px-lg-4 d-flex align-items-center justify-content-between">
         {/* Left: Brand Logo & Links */}
         <div className="d-flex align-items-center flex-grow-1">
-          {/* Logo matching exact reference image */}
-          <Link to="/" className="exact-logo-link me-3 me-lg-4 text-decoration-none" onClick={closeMenu}>
-            <span className="logo-the-news">The News</span>
-            <span className="logo-adda-box">ADDA</span>
+          {/* 3D Brand Logo & Title */}
+          <Link to="/" className="exact-logo-link me-2 me-lg-4 text-decoration-none d-flex align-items-center gap-2" onClick={closeMenu}>
+            <img src="/logo.png" alt="Soar Samachar 3D Logo" className="navbar-brand-3d-logo" />
+            <div className="d-flex flex-column justify-content-center">
+              <span className="logo-brand-title">Soar Samachar</span>
+              <span className="logo-brand-sub">सोर समाचार</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation Links directly adjacent to logo */}

@@ -24,9 +24,17 @@ const AdminLogin = () => {
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-5">
             <div className="text-center mb-4">
-              <span className="badge bg-danger fs-6 p-2 px-3 fw-bold mb-2">NA ADMIN</span>
-              <h2 className="fw-bold">The News Adda</h2>
-              <p className="text-muted small">एडमिन पोर्टल • समाचार जोड़ें एवं प्रबंधित करें</p>
+              <img
+                src="/logo.png"
+                alt="Soar Samachar 3D Logo"
+                className="logo-3d-img mb-3"
+                style={{ width: '80px', height: '80px' }}
+              />
+              <div>
+                <span className="badge bg-danger fs-6 p-1 px-3 fw-bold mb-2">ADMIN PORTAL</span>
+              </div>
+              <h2 className="fw-bold mb-1">Soar Samachar</h2>
+              <p className="text-muted small">सोर समाचार • एडमिन पोर्टल</p>
             </div>
 
             <div className="card shadow-lg border-0 bg-body-tertiary">

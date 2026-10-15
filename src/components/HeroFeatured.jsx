@@ -44,7 +44,7 @@ const HeroFeatured = ({ featuredStories = [] }) => {
               </h2>
               <div className="d-flex align-items-center gap-3 text-light opacity-75 small">
                 <span>
-                  <i className="bi bi-person-fill me-1"></i> {mainStory.author || 'The News Adda'}
+                  <i className="bi bi-person-fill me-1"></i> {mainStory.author || 'Soar Samachar'}
                 </span>
                 <span>
                   <i className="bi bi-clock me-1"></i>

@@ -22,13 +22,20 @@ const Footer = () => {
           {/* Column 1: Brand & About */}
           <div className="col-lg-4 col-md-6">
             <Link to="/" className="text-decoration-none">
-              <div className="d-flex align-items-center gap-2 mb-3">
-                <span className="badge bg-danger p-2 fs-6 fw-bold">NA</span>
-                <span className="fs-3 fw-bold text-white">The News Adda</span>
+              <div className="d-flex align-items-center gap-3 mb-3">
+                <img
+                  src="/logo.png"
+                  alt="Soar Samachar 3D Logo"
+                  className="footer-brand-3d-logo"
+                />
+                <div>
+                  <span className="fs-3 fw-bold text-white d-block lh-1">Soar Samachar</span>
+                  <span className="text-warning small fw-semibold">सोर समाचार • पिथौरागढ़</span>
+                </div>
               </div>
             </Link>
             <p className="small text-secondary mb-3">
-              {t('siteTitle')} - {t('tagline')}. हम निष्पक्ष और शोधपरक पत्रकारिता के माध्यम से जनता तक सत्य और तथ्यात्मक सूचनाएं पहुंचाने के लिए प्रतिबद्ध हैं।
+              {t('siteTitle')} (सोर समाचार) - {t('tagline')}। पिथौरागढ़, सीमांत उत्तराखण्ड और देश-दुनिया की निष्पक्ष, निर्भीक और शोधपरक पत्रकारिता के लिए प्रतिबद्ध।
             </p>
             <div className="d-flex gap-3">
               <a href="https://facebook.com" target="_blank" rel="noreferrer" className="btn btn-outline-secondary btn-sm rounded-circle p-2" title="Facebook">
@@ -150,6 +157,21 @@ const Footer = () => {
             <Link to="/terms-conditions">{t('termsConditions')}</Link>
             <Link to="/contact-us">{t('contactUs')}</Link>
           </div>
+        </div>
+
+        {/* Hackerfromhills Developer Attribution matching Screenshot 2 */}
+        <div className="footer-hacker-attribution text-center">
+          <span className="hacker-text">
+            Made with <span className="hacker-heart">♡</span> by{' '}
+            <a
+              href="https://tally.so/r/RWKW0p"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hacker-link"
+            >
+              Team Hackerfromhills
+            </a>
+          </span>
         </div>
       </div>
     </footer>

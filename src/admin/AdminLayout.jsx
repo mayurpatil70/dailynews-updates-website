@@ -30,8 +30,9 @@ const AdminLayout = () => {
       <nav className="navbar navbar-expand navbar-dark bg-dark px-3 py-2 border-bottom border-secondary">
         <div className="container-fluid">
           <Link to="/admin" className="navbar-brand fw-bold d-flex align-items-center gap-2">
+            <img src="/logo.png" alt="Soar Samachar 3D Logo" style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover', border: '1.5px solid #d4af37' }} />
             <span className="badge bg-danger">ADMIN</span>
-            <span className="fs-5">The News Adda</span>
+            <span className="fs-5">Soar Samachar</span>
           </Link>
 
           <div className="d-flex align-items-center gap-3">

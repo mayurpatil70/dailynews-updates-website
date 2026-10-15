@@ -3,7 +3,7 @@ import { initialNewsData, categoriesList } from '../data/initialNewsData';
 
 const NewsContext = createContext();
 
-const STORAGE_KEY = 'newsadda-articles-v1';
+const STORAGE_KEY = 'soarsamachar-articles-v1';
 
 export const NewsProvider = ({ children }) => {
   const [articles, setArticles] = useState(() => {
